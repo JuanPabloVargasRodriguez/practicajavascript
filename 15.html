@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar u Ocultar Elemento</title>
+    <style>
+        #elemento {
+            width: 200px;
+            height: 200px;
+            background-color: #007bff;
+            color: #fff;
+            display: none;
+            margin: 20px auto;
+            text-align: center;
+            line-height: 200px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="elemento" onclick="ocultar()">Haz clic para ocultarme</div>
+    <button onclick="mostrarOcultar()">Mostrar/Ocultar</button>
+
+    <script>
+        const elemento = document.getElementById('elemento');
+
+        function mostrarOcultar() {
+            if (elemento.style.display === 'none') {
+                elemento.style.display = 'block';
+            } else {
+                elemento.style.display = 'none';
+            }
+        }
+        
+        function ocultar() {
+            elemento.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máximo Común Divisor (MCD)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Máximo Común Divisor (MCD)</h2>
+        <input type="number" id="numero1" placeholder="Ingrese el primer número">
+        <input type="number" id="numero2" placeholder="Ingrese el segundo número">
+        <button onclick="calcularMCD()">Calcular MCD</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function calcularMCD() {
+            var numero1 = parseInt(document.getElementById("numero1").value);
+            var numero2 = parseInt(document.getElementById("numero2").value);
+
+            var mcd = calcularMCDRecursivo(numero1, numero2);
+            document.getElementById("resultado").innerText = "El MCD de " + numero1 + " y " + numero2 + " es: " + mcd;
+        }
+
+        function calcularMCDRecursivo(a, b) {
+            if (b === 0) {
+                return a;
+            } else {
+                return calcularMCDRecursivo(b, a % b);
+            }
+        }
+    </script>
+</body>
+</html>

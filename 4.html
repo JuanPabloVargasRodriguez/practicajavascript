@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Celsius a Fahrenheit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Conversor de Celsius a Fahrenheit</h2>
+        <input type="number" id="celsiusInput" placeholder="Ingrese grados Celsius">
+        <button onclick="convertirACelsius()">Convertir</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function convertirACelsius() {
+            var celsius = parseFloat(document.getElementById("celsiusInput").value);
+            var fahrenheit = (celsius * 9 / 5) + 32;
+            document.getElementById("resultado").innerText = celsius + " grados Celsius son " + fahrenheit.toFixed(2) + " grados Fahrenheit.";
+        }
+    </script>
+</body>
+</html>

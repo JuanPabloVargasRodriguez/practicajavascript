@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Color de Fondo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .color-option {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Cambiar Color de Fondo</h2>
+        <div>
+            <button onclick="cambiarColor('red')">Rojo</button>
+            <button onclick="cambiarColor('green')">Verde</button>
+            <button onclick="cambiarColor('blue')">Azul</button>
+            <button onclick="cambiarColor('yellow')">Amarillo</button>
+            <button onclick="cambiarColor('purple')">Púrpura</button>
+        </div>
+        <div id="colorOptions">
+            <div class="color-option" style="background-color: cyan" onclick="cambiarColor('cyan')"></div>
+            <div class="color-option" style="background-color: magenta" onclick="cambiarColor('magenta')"></div>
+            <div class="color-option" style="background-color: orange" onclick="cambiarColor('orange')"></div>
+            <div class="color-option" style="background-color: pink" onclick="cambiarColor('pink')"></div>
+            <div class="color-option" style="background-color: gray" onclick="cambiarColor('gray')"></div>
+        </div>
+        <div id="elemento" style="width: 200px; height: 200px; margin-top: 20px; border: 1px solid #000;"></div>
+    </div>
+
+    <script>
+        function cambiarColor(color) {
+            document.getElementById('elemento').style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>

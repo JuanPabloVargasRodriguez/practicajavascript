@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encontrar el número mayor en un array</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Encontrar el número mayor en un array</h2>
+        <input type="text" id="inputArray" placeholder="Ingrese los números separados por coma">
+        <button onclick="encontrarNumeroMayor()">Encontrar número mayor</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function encontrarNumeroMayor() {
+            var inputArray = document.getElementById("inputArray").value;
+            var numeros = inputArray.split(',').map(Number);
+
+            var numeroMayor = numeros[0];
+            for (var i = 1; i < numeros.length; i++) {
+                if (numeros[i] > numeroMayor) {
+                    numeroMayor = numeros[i];
+                }
+            }
+
+            document.getElementById("resultado").innerText = "El número mayor es: " + numeroMayor;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar si un número es primo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Verificar si un número es primo</h2>
+        <input type="number" id="numeroInput" placeholder="Ingrese un número">
+        <button onclick="verificarPrimo()">Verificar</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function verificarPrimo() {
+            var numero = parseInt(document.getElementById("numeroInput").value);
+            var esPrimo = true;
+
+            if (numero <= 1) {
+                esPrimo = false;
+            } else {
+                for (var i = 2; i <= Math.sqrt(numero); i++) {
+                    if (numero % i === 0) {
+                        esPrimo = false;
+                        break;
+                    }
+                }
+            }
+
+            if (esPrimo) {
+                document.getElementById("resultado").innerText = numero + " es un número primo.";
+            } else {
+                document.getElementById("resultado").innerText = numero + " no es un número primo.";
+            }
+        }
+    </script>
+</body>
+</html>
+
